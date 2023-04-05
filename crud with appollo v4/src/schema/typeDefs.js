@@ -19,6 +19,8 @@ type Mutation{
     addPlayer(playername : String!,position : String!,country : String!,isDeleted : Boolean):Player
     updatePlayer(id:String!,playername : String!,position : String!,country : String!):Player
     deletePlayer(id : String!,isDeleted : Boolean) : Player
-}`
+}
+
+`
 
 module.exports = typeDefs

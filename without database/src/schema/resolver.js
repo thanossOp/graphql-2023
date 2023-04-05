@@ -3,8 +3,19 @@ const {products, categories} = require('./data')
 
 const resolver = {
     Query: {
-        products: (parent, args, context) => {
-            return products
+        products: (parent, {filter}, context) => {
+
+            let filteredproduct = products
+
+            if(filter){
+                if(filter.onSale === true){
+                    filteredproduct = filteredproduct.filter((product)=>{
+                        return product.onSale
+                    })
+                }
+            }
+
+            return filteredproduct
         },
         categories : (parent,args,context) =>{
             return categories

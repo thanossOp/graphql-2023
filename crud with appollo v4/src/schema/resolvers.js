@@ -4,6 +4,7 @@ const resolvers = {
     Query: {
         getPlayers: async (parent, args) => {
             const players = await Player.find({})
+            
             return players
         },
         getPlayer: async (parent, args) => {
