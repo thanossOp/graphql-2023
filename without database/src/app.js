@@ -14,7 +14,10 @@ const resolvers = require('./schema/resolver')
 
 const server = new ApolloServer({
     typeDefs,
-    resolvers
+    resolvers,
+    context : {
+        sayHello : ()=>console.log('hiii')
+    }
 })
 
 const startserver = startStandaloneServer(server,{

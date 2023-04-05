@@ -8,6 +8,7 @@ type Query {
     category(id : ID!):Category
     
 }
+
 type Product {
     id: ID!
     name : String!
